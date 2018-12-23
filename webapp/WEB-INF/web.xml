@@ -8,7 +8,7 @@
 
   <servlet>
     <servlet-name>basic-input</servlet-name>
-    <servlet-class>InputServlet</servlet-class>
+    <servlet-class>com.baobao.InputServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -16,8 +16,80 @@
     <url-pattern>/practice/input</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>basic-account</servlet-name>
+    <servlet-class>com.baobao.AccountServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>basic-account</servlet-name>
+    <url-pattern>/practice/account</url-pattern>
+  </servlet-mapping>
+
+
+
+  <servlet>
+    <servlet-name>basic-book</servlet-name>
+    <servlet-class>com.baobao.BookServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>basic-book</servlet-name>
+    <url-pattern>/practice/book</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>basic-enter</servlet-name>
+    <servlet-class>com.baobao.RegisterServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>basic-enter</servlet-name>
+    <url-pattern>/practice/enter</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>basic-login</servlet-name>
+    <servlet-class>com.baobao.LoginServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>basic-login</servlet-name>
+    <url-pattern>/practice/login</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>query-account</servlet-name>
+    <servlet-class>com.baobao.QueryAccountServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>query-account</servlet-name>
+    <url-pattern>/query</url-pattern>
+  </servlet-mapping>
+
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+
+
+
+
+  <filter>
+    <filter-name>login-filter</filter-name>
+    <filter-class>com.baobao.filters.FilterLogin</filter-class>
+    <init-param>
+      <param-name>exclude</param-name>
+      <param-value>/pages/Enter.html,/practice/enter,/practice/login,/index.jsp,/</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>login-filter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 
 </web-app>

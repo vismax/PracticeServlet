@@ -1,0 +1,45 @@
+<html xmlns:h1="http://www.w3.org/1999/html">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" media="screen" href="style.css" />
+    <title>Book Management</title>
+    <h1>Book Management</h1>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+
+
+
+<body>
+<form name="form1" method="post" action=""   id="formID" >
+
+    <p> BookName <input type="text" placeholder="请输入书名" name = "input"></p>
+    <p> Price    <input type="text" placeholder="请输入价格" name = "input"></p>
+
+    <input id = "tijiao" type="button" value="Send &raquo;"> </p>
+</form>
+
+<script>
+    $('#tijiao').click(function(){
+
+        $.ajax(
+            {
+                type: 'POST',
+                url: '/practice/book',
+                data : $('#formID').serialize(),
+                contentType : 'application/json',
+                success : function (data) {
+                    alert (data);
+                }
+
+            }
+        );
+
+    });
+</script>
+</body>
+</html>
